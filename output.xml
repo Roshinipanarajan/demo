@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-02-21T10:29:29.100975" rpa="false" schemaversion="5">
+<suite id="s1" name="Sampleapi" source="c:\Users\roshi\OneDrive\Desktop\Selenium_Python\Robot-FrameWork\sampleapi.robot">
+<test id="s1-t1" name="Get Course ID" line="99">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-02-21T10:29:30.254992" level="INFO">&amp;{req_body} = { requestType=getCourseId | path=tamil/cloud-computing/aws-cloud-formation/ | authtoken=4422222c9585fcbd6e93ffd97e555e197e17372b219542072547c57f83412de3aa93b8b6c0babb48b7cb6ceadbc2c2ad9c82510e5167c1b2...</msg>
+<var>&amp;{req_body}</var>
+<arg>requestType=getCourseId</arg>
+<arg>path=tamil/cloud-computing/aws-cloud-formation/</arg>
+<arg>authtoken=4422222c9585fcbd6e93ffd97e555e197e17372b219542072547c57f83412de3aa93b8b6c0babb48b7cb6ceadbc2c2ad9c82510e5167c1b290d64706048ba157</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-02-21T10:29:30.253185" elapsed="0.007401"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-02-21T10:29:30.264139" level="INFO">&amp;{device_details} = { Device Model=Not detected | Device Type=desktop | OS=Windows 10 | Browser=Chrome 132.0.0.0 | Platform=Win32 }</msg>
+<var>&amp;{device_details}</var>
+<arg>Device Model=Not detected</arg>
+<arg>Device Type=desktop</arg>
+<arg>OS=Windows 10</arg>
+<arg>Browser=Chrome 132.0.0.0</arg>
+<arg>Platform=Win32</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-02-21T10:29:30.262736" elapsed="0.001885"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${req_body}</arg>
+<arg>deviceDetails=${device_details}</arg>
+<arg>originUrl=www.guvi.in</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-02-21T10:29:30.266117" elapsed="0.000975"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Request Body: ${req_body}</arg>
+<arg>level=DEBUG</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T10:29:30.268051" elapsed="0.000806"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2025-02-21T10:29:30.942666" level="INFO">POST Request : url=https://www.guvi.in/model/v2/course_details.php 
+ path_url=/model/v2/course_details.php 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '406', 'Content-Type': 'application/json'} 
+ body=b'{"requestType": "getCourseId", "path": "tamil/cloud-computing/aws-cloud-formation/", "authtoken": "4422222c9585fcbd6e93ffd97e555e197e17372b219542072547c57f83412de3aa93b8b6c0babb48b7cb6ceadbc2c2ad9c82510e5167c1b290d64706048ba157", "deviceDetails": {"Device Model": "Not detected", "Device Type": "desktop", "OS": "Windows 10", "Browser": "Chrome 132.0.0.0", "Platform": "Win32"}, "originUrl": "www.guvi.in"}' 
+ </msg>
+<msg time="2025-02-21T10:29:30.943872" level="INFO">POST Response : url=https://www.guvi.in/model/v2/course_details.php 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 21 Feb 2025 04:59:28 GMT', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Frame-Options': 'SAMEORIGIN', 'Vary': 'Origin', 'Cache-Control': 'public', 'cf-cache-status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=EvXVZ3yOZ6IrCcEZEeX94ozHbLfOnFWmpyUoi6d7MnqZxUnBI9rduL2NjJto%2FGReXO5e49pdrjSP7DSOw8N4hgQ2n6rZyy4I6JC2D29hYOJOO1Y5UA9NyW6%2Fpm6d"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Strict-Transport-Security': 'max-age=0; includeSubDomains; preload', 'Server': 'cloudflare', 'CF-RAY': '91542ad108f6002c-BOM', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=121515&amp;min_rtt=114291&amp;rtt_var=57308&amp;sent=4&amp;recv=7&amp;lost=0&amp;retrans=0&amp;sent_bytes=2340&amp;recv_bytes=1270&amp;delivery_rate=16968&amp;cwnd=251&amp;unsent_bytes=0&amp;cid=1eba5f6e907e4b68&amp;ts=203&amp;x=0"'} 
+ body=None 
+ </msg>
+<msg time="2025-02-21T10:29:30.944292" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${api_endpoint}</arg>
+<arg>json=${req_body}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2025-02-21T10:29:30.269719" elapsed="0.674751"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T10:29:30.947478" level="INFO">Status Code: 200</msg>
+<arg>Status Code: ${response.status_code}</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T10:29:30.946004" elapsed="0.001772"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-02-21T10:29:30.950668" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-02-21T10:29:30.948974" elapsed="0.002082"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Response Content: ${response.content}</arg>
+<arg>level=DEBUG</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T10:29:30.951923" elapsed="0.001427"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Convert To Dictionary" owner="Collections">
+<msg time="2025-02-21T10:29:30.955482" level="FAIL">Resolving variable '${response.json()}' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)</msg>
+<arg>${response.json()}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<status status="FAIL" start="2025-02-21T10:29:30.954819" elapsed="0.000923">Resolving variable '${response.json()}' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)</status>
+</kw>
+<msg time="2025-02-21T10:29:30.956023" level="INFO">${json_response} = ('FAIL', "Resolving variable '${response.json()}' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)")</msg>
+<var>${json_response}</var>
+<arg>Convert To Dictionary</arg>
+<arg>${response.json()}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-02-21T10:29:30.954295" elapsed="0.001840"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-02-21T10:29:30.959507" level="FAIL">Evaluating expression '\'(\'FAIL\', "Resolving variable \'${response.json()}\' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)")\'==\'None\'' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)
+
+Variables in the original expression '\'(\'FAIL\', "Resolving variable \'${response.json()}\' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)")\'==\'None\'' were resolved before the expression was evaluated. Try using '\'(\'FAIL\', "Resolving variable $response.json() failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)")\'==\'None\'' syntax to avoid that. See Evaluating Expressions appendix in Robot Framework User Guide for more details.</msg>
+<var>${json_response}</var>
+<arg>'${json_response}'=='None'</arg>
+<arg>'{"status":"error", "message":"Failed to parse JSON"}'</arg>
+<arg>${json_response}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="FAIL" start="2025-02-21T10:29:30.957543" elapsed="0.003812">Evaluating expression '\'(\'FAIL\', "Resolving variable \'${response.json()}\' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)")\'==\'None\'' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)
+
+Variables in the original expression '\'(\'FAIL\', "Resolving variable \'${response.json()}\' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)")\'==\'None\'' were resolved before the expression was evaluated. Try using '\'(\'FAIL\', "Resolving variable $response.json() failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)")\'==\'None\'' syntax to avoid that. See Evaluating Expressions appendix in Robot Framework User Guide for more details.</status>
+</kw>
+<kw name="Convert To Dictionary" owner="Collections">
+<var>${json_response}</var>
+<arg>${json_response}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<status status="NOT RUN" start="2025-02-21T10:29:30.962292" elapsed="0.000312"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${status}</var>
+<arg>${json_response}</arg>
+<arg>status</arg>
+<arg>default=ERROR</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-02-21T10:29:30.963353" elapsed="0.000254"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>success</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2025-02-21T10:29:30.964190" elapsed="0.000148"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${course_details}</var>
+<arg>${json_response}</arg>
+<arg>courseDetails</arg>
+<arg>default=[]</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-02-21T10:29:30.964921" elapsed="0.000184"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${course_key}</var>
+<arg>Get From List</arg>
+<arg>${course_details}</arg>
+<arg>0.key</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2025-02-21T10:29:30.965680" elapsed="0.000375"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<var>${course_key}</var>
+<arg>'${course_key}'=='None'</arg>
+<arg>'KEY_NOT_FOUND'</arg>
+<arg>${course_key}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="NOT RUN" start="2025-02-21T10:29:30.966595" elapsed="0.000193"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Course Key: ${course_key}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-21T10:29:30.967276" elapsed="0.000150"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${course_key}</arg>
+<arg>awsCloudFormationTa</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2025-02-21T10:29:30.968097" elapsed="0.000155"/>
+</kw>
+<status status="FAIL" start="2025-02-21T10:29:30.250860" elapsed="0.718110">Evaluating expression '\'(\'FAIL\', "Resolving variable \'${response.json()}\' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)")\'==\'None\'' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)
+
+Variables in the original expression '\'(\'FAIL\', "Resolving variable \'${response.json()}\' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)")\'==\'None\'' were resolved before the expression was evaluated. Try using '\'(\'FAIL\', "Resolving variable $response.json() failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)")\'==\'None\'' syntax to avoid that. See Evaluating Expressions appendix in Robot Framework User Guide for more details.</status>
+</test>
+<status status="FAIL" start="2025-02-21T10:29:29.106602" elapsed="1.865988"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Sampleapi" id="s1" pass="0" fail="1" skip="0">Sampleapi</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
