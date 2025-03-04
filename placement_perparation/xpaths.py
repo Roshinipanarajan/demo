@@ -1,4 +1,4 @@
-# xpaths.py
+# Xpath Dewtails
 XPATHS = {
     "aptitude_dropdown": "(//div[normalize-space()='Aptitude'])[1]",
     "quantitative_aptitude": "(//a[@class='nav-sub-item'][normalize-space()='Quantitative Aptitude'])[1]",

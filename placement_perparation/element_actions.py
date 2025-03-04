@@ -8,5 +8,5 @@ class ElementActions:
         self.wait = WebDriverWait(driver, 10)
 
     def click_element(self, xpath):
-        """Waits for an element to be clickable and clicks it."""
+        """In this we excute all the xpaths"""
         self.wait.until(EC.element_to_be_clickable((By.XPATH, xpath))).click()

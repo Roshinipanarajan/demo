@@ -11,6 +11,7 @@ class PlacementPreparation:
     def get_demo(self, url):
         self.driver.get(url)
         try:
+            # what every we need to change the Xpath Location
             self.actions.click_element(XPATHS["aptitude_dropdown"])
             self.actions.click_element(XPATHS["quantitative_aptitude"])
             self.actions.click_element(XPATHS["number_system"])
