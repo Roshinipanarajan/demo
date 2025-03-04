@@ -1,7 +1,7 @@
 import time
 from driver_setup import get_driver
-from element_actions import ElementActions
-from xpaths import XPATHS
+from placement_perparation.apptitude_tab.element_actions import ElementActions
+from placement_perparation.apptitude_tab.xpaths import XPATHS
 
 class PlacementPreparation:
     def __init__(self):

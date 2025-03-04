@@ -1,4 +1,4 @@
-from placement_preparation import PlacementPreparation
+from placement_perparation.apptitude_tab.placement_preparation import PlacementPreparation
 
 if __name__ == "__placement__":
     placement = PlacementPreparation()
