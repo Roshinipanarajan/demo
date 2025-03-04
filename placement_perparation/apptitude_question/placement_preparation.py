@@ -1,7 +1,7 @@
 import time
 from driver_setup import get_driver
-from placement_perparation.apptitude_tab.element_actions import ElementActions
-from placement_perparation.apptitude_tab.xpaths import XPATHS
+from element_action import ElementActions
+from xpaths import XPATHS
 
 class PlacementPreparation:
     def __init__(self):
@@ -11,7 +11,6 @@ class PlacementPreparation:
     def get_demo(self, url):
         self.driver.get(url)
         try:
-            # what every we need to change the Xpath Location
             self.actions.click_element(XPATHS["aptitude_dropdown"])
             self.actions.click_element(XPATHS["quantitative_aptitude"])
             self.actions.click_element(XPATHS["number_system"])
@@ -20,6 +19,10 @@ class PlacementPreparation:
             self.actions.click_element(XPATHS["questions_btn"])
             self.actions.click_element(XPATHS["view_answer"])
             self.actions.click_element(XPATHS["show_more"])
+            self.actions.click_element(XPATHS["checkbox"])
+            self.actions.enter_text(XPATHS["comments"], "This is a test comment.")
+            time.sleep(4)
+            self.actions.click_element(XPATHS["submitbutton"])
             time.sleep(4)
         except Exception as e:
             print(f"Error: {e}")
